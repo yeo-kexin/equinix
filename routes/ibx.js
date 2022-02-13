@@ -25,10 +25,17 @@ router.get("/:id", (req, res, next) => {
           res.status(400).json({"error":err.message});
           return;
         }
-        res.json({
-            "message":"success",
-            "data":rows
-        })
+        if (rows.length > 0) {
+          res.json({
+            "message": "success",
+            "data": rows
+          });
+        } else {
+          res.json({
+            "message": "ibx id does not exist",
+          });
+          return;
+        }
       });
 });
 

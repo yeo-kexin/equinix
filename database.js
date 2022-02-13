@@ -34,7 +34,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             ibxId INTEGER,
             region TEXT, 
             country TEXT,
-            date DATETIME
+            d DATETIME
             )`,
         (err) => {
             if (err) {
@@ -42,8 +42,23 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 // console.log(err);
             } else {
                 // table just created, creating some rows
-                var insert = 'INSERT INTO visitor (ibxId, region, country, date) VALUES (?,?,?,?)'
-                db.run(insert, ["1", "Asia", "Singapore", "2022-02-02 10:12:00"])
+                var insert = 'INSERT INTO visitor (ibxId, region, country, d) VALUES (?,?,?,?)'
+                db.run(insert, ["1", "Asia", "Singapore", "2022-01-01 10:12:00"]) 
+                
+                db.run(insert, ["1", "Asia", "Singapore", "2022-02-10 17:30:00"])
+                db.run(insert, ["1", "Asia", "Singapore", "2022-02-11 16:40:00"])
+                db.run(insert, ["1", "Asia", "Singapore", "2022-02-11 16:50:00"])
+
+                db.run(insert, ["1", "Asia", "Singapore", "2022-02-12 10:12:00"])
+                db.run(insert, ["1", "Asia", "Singapore", "2022-02-12 10:25:00"])
+                db.run(insert, ["1", "Europe", "Germany", "2022-02-12 10:30:00"])
+                db.run(insert, ["1", "Europe", "France", "2022-02-12 10:45:00"])
+                db.run(insert, ["1", "Asia", "Malaysia", "2022-02-12 12:30:00"])
+                db.run(insert, ["1", "Europe", "Poland", "2022-02-12 14:00:00"])
+                db.run(insert, ["1", "North America", "Canada", "2022-02-12 14:10:00"])
+                db.run(insert, ["1", "North America", "Mexico", "2022-02-12 14:20:00"])
+
+
                 db.run(insert, ["2", "Europe", "Germany", "2022-02-03 13:15:00"])
             }
         });  
