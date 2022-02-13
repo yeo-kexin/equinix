@@ -216,7 +216,7 @@ class Visitors extends Component {
                     </div>
                 </div>
             </div>
-            <div class="mt-3">Rush hour on each day: </div>
+            <div class="mt-3">Rush hour of each day: </div>
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-secondary" onClick={() => this.handleClick(0)}>
                     Sun
